@@ -3,9 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juegos</title>
+    <title>Juegos MegaGames</title>
 </head>
 <body>
+
     <h1>Catalogo de Juegos</h1>
+
+    {% for juego in juegos %}
+
+
+<h1>{{juego.nombre}}, <br> </h1>
+<p>ID: {{juego.id}}, <br> </p>
+<p>Precio: {{juego.precio}}, <br> </p>
+<p>descripcion: {{juego.descripcion}}, <br> </p>
+<p>Categoria: {{juego.id_categoria.categoria}}, <br> </p>
+<p>Stock: {{juego.stock}} <br> </p>
+
+    {% endfor%}
+
 </body>
 </html>
