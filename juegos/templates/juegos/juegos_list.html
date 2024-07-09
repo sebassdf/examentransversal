@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>juegos list</title>
+</head>
+<body>
+    <h1>Editar datos de juegos</h1>
+    <br>
+
+    <button type="button">
+        <a href="{% url 'juegosAdd' %}"> Agregar </a>
+    </button>
+
+    <div id="idMensajes">
+        {% if mensaje %}
+            {{mensaje}}
+        {% endif %}
+    </div>
+
+    <table>
+        {% if juegos %}
+            <th>id</th>
+            <th>Nombre</th>
+            <th>precio</th>
+            <th>descripcion</th>
+            <th>id_categoria</th>
+            <th>stock</th>
+            {% for juego in juegos %}
+                <tr>
+                    <td>{{juego.id}}</td>
+                    <td>{{juego.nombre}}</td>
+                    <td>{{juego.precio}}</td>
+                    <td><a href="{% url 'juegosDel' pk=juego.id %}">Eliminar</a></td>
+                    <td><a href="{% url 'juegosEdit' pk=juego.id %}">Modificar</a></td>
+                </tr>
+            {% endfor %}
+        {% endif %}
+    </table>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#idMensajes").delay(2000).fadeOut("slow");
+    });
+</script>
+
+</body>
+</html>

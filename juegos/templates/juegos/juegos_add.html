@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar juegos</title>
+</head>
+<body>
+
+    <div style="text-align: center;">
+        <h2>Formulario CRUD para juegos</h2><br>
+        <form action="juegosAdd" method="POST">
+            {% csrf_token %}
+
+            <pre>id:  <input type="text"name="id"> </pre>
+            <pre>Nombre:  <input type="text"name="nombre"> </pre>
+            <pre>Precio:  <input type="text"name="precio"> </pre>
+            <pre>Descripcion:  <input type="text"name="descripcion"> </pre>
+            <pre>Categoria 
+                <select name="categoria">
+                    {% for categoria in categorias %}
+                        <option value="{{categoria.id_categoria}}">{{categoria.categoria}}</option>
+                    {% endfor %}
+                </select>
+            </pre>
+            <pre>Stock:  <input type="text"name="stock"> </pre>
+           
+           
+
+            <input type="submit" name="opcion" value="Agregar">
+        </form><br><br>
+        <a href="{% url 'crud' %}">Volver</a>
+        <br>
+        <div id="idMensajes">
+            {% if mensaje %}
+                {{mensaje}}
+            {% endif %}
+        </div>
+    </div>
+    
+</body>
+</html>
