@@ -22,3 +22,6 @@ class Juego(models.Model):
 
     def __str__(self):
         return str(self.id) +" "+ str(self.nombre) 
+
+    class Meta:
+        ordering = ['id']

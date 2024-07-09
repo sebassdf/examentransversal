@@ -12,11 +12,11 @@
     {% for juego in juegos %}
 
 
-<h1>{{juego.nombre}}, <br> </h1>
-<p>ID: {{juego.id}}, <br> </p>
-<p>Precio: {{juego.precio}}, <br> </p>
-<p>descripcion: {{juego.descripcion}}, <br> </p>
-<p>Categoria: {{juego.id_categoria.categoria}}, <br> </p>
+<h2>{{juego.nombre}} <br> </h2>
+<p>ID: {{juego.id}} <br> </p>
+<p>Precio: {{juego.precio}} <br> </p>
+<p>descripcion: {{juego.descripcion}} <br> </p>
+<p>Categoria: {{juego.id_categoria.categoria}} <br> </p>
 <p>Stock: {{juego.stock}} <br> </p>
 
     {% endfor%}
