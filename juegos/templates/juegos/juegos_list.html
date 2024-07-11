@@ -8,7 +8,7 @@
     <title>juegos list</title>
 </head>
 <body>
-    <h1>Editar datos de juegos</h1>
+    <h1>Menu de administracion de juegos</h1>
     <br>
 
     <button type="button">
@@ -26,14 +26,13 @@
             <th>id</th>
             <th>Nombre</th>
             <th>precio</th>
-            <th>descripcion</th>
-            <th>id_categoria</th>
             <th>stock</th>
             {% for juego in juegos %}
                 <tr>
                     <td>{{juego.id}}</td>
                     <td>{{juego.nombre}}</td>
                     <td>{{juego.precio}}</td>
+                    <td>{{juego.stock}}</td>
                     <td><a href="{% url 'juegosDel' pk=juego.id %}">Eliminar</a></td>
                     <td><a href="{% url 'juegosEdit' pk=juego.id %}">Modificar</a></td>
                 </tr>

@@ -7,8 +7,9 @@ urlpatterns = [
 
     path('crud', views.crud, name='crud'),
     path('juegosAdd', views.juegosAdd, name='juegosAdd'),
-    path('juegosDel', views.juegosDel, name='juegosDel'),
-    path('juegosEdit', views.juegosEdit, name='juegosEdit'),
+    path('juegosDel/<str:pk>', views.juegosDel, name='juegosDel'),
+    path('juegosEdit/<str:pk>', views.juegosEdit, name='juegosEdit'),
+    path('juegosUpdate', views.juegosUpdate, name='juegosUpdate'),
     
 
 
