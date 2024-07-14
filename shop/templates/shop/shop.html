@@ -1,0 +1,75 @@
+{% extends "megagamesApp/base.html" %}
+
+{% load static %}
+
+{% block contenido %}
+
+<div class="container">
+
+<div style="float:right; margin-top: 10px;">
+
+    <!-- carrito -->
+    {% if request.user.is_authenticated %}
+
+        {% include "cart/widget.html" %}
+
+    {% else %}
+
+        {% if messages %}
+
+        {% for mensaje in messages %}
+        <br><br>
+        <center>
+
+        <span class="alert alert-primary" role="alert"> 
+            {{mensaje}}. <a href="{% url 'logeo' %}">Login</a>
+        </span>
+
+        </center>
+
+        {% endfor %}
+
+        {% endif %}
+
+    {% endif %}
+
+</div>
+<div class="row"> <!-- my-2 -->
+
+{% for producto in productos %}
+
+    <div class="col-md-4">
+
+            <div class="card" style="width: 100%; margin: 10px 10px;">
+                  
+                <img src="{{producto.imagen.url}}" class="card-img-top" style="height: 200px;">
+
+                
+                  <div class="card-body">
+                        <h6 class="card-tittle text-center"><strong>{{producto.nombre}}</strong></h6> 
+                        <p class="card-text text-right">{{producto.precio}}&nbsp;CLP</p>
+                  </div> <!-- card-body cerrada-->
+
+                  <div class="card-footer text-center">
+                        {% if request.user.is_authenticated %}
+
+                        <a href="{% url 'cart:agregar' producto.id %}" class="btn btn-success" style="background-color: #0D2B49; border-color: #0D2B49;">Agregar al carrito</a>
+                        
+                        {% else %}
+                        
+                        <a href="#" class="btn btn-success" style="background-color: #0D2B49; border-color: #0D2B49;">Registrate para agregar</a>
+
+
+                        {% endif %}
+                  </div>
+
+            </div> <!-- card cerrada-->
+    </div>
+    
+{% endfor %}
+</div>     <!-- row cerrada-->
+   
+</div> <!-- conteiner cerrada-->
+
+
+{% endblock %}

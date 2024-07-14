@@ -1,0 +1,42 @@
+{% extends "megagamesApp/base.html" %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block contenido %}
+    <div class="contenedorFormulario" >
+        
+
+        {% if messages %}
+
+        {% for mensaje in messages %}
+
+        <center><span style="
+        color:orange; 
+        font-family: 'Helvetica';
+        font-size: larger;">{{mensaje}}</span></center>
+
+        {% endfor %}
+
+        {% endif %}
+
+
+
+        <form action="" method="post" style="margin: 10px; color: white;">
+            {% csrf_token %}
+    
+            {{form|crispy}} 
+            
+            
+            <center><button type="submit" class="btn btn-success" style="background-color: #3269CF; color: #01053B; border-color: #01053B;"> ¡Log in! </button></center>
+            
+            
+            <br>
+    
+        </form>
+
+        
+    </div>
+
+
+{% endblock %} 
