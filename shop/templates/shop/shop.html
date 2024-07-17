@@ -8,7 +8,7 @@
 
 <div style="float:right; margin-top: 10px;">
 
-    <!-- carrito -->
+ 
     {% if request.user.is_authenticated %}
 
         {% include "cart/widget.html" %}
@@ -34,7 +34,7 @@
     {% endif %}
 
 </div>
-<div class="row"> <!-- my-2 -->
+<div class="row"> 
 
 {% for producto in productos %}
 
@@ -42,13 +42,13 @@
 
             <div class="card" style="width: 100%; margin: 10px 10px;">
                   
-                <img src="{{producto.imagen.url}}" class="card-img-top" style="height: 200px;">
+                <img src="{{producto.imagen.url}}" alt="{{ producto.nombre }}" class="card-img-top" style="height: 200px;">
 
                 
                   <div class="card-body">
                         <h6 class="card-tittle text-center"><strong>{{producto.nombre}}</strong></h6> 
                         <p class="card-text text-right">{{producto.precio}}&nbsp;CLP</p>
-                  </div> <!-- card-body cerrada-->
+                  </div> 
 
                   <div class="card-footer text-center">
                         {% if request.user.is_authenticated %}
@@ -63,13 +63,13 @@
                         {% endif %}
                   </div>
 
-            </div> <!-- card cerrada-->
+            </div>
     </div>
     
 {% endfor %}
-</div>     <!-- row cerrada-->
+</div>    
    
-</div> <!-- conteiner cerrada-->
+</div>
 
 
 {% endblock %}

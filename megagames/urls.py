@@ -29,8 +29,8 @@ urlpatterns = [
 
     path('shop/', include('shop.urls')),
 
-
-
+    path('media/shop', include('shop.urls'))
 
 ]
+
 
