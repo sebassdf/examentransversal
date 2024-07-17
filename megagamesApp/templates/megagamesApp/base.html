@@ -21,13 +21,13 @@
 
     <h1 class="site-heading text-center text-white d-none d-lg-block">
       
-        <span class="site-heading-lower">MEGA GAMES Y LA CONCHETUMARE</span>
+        <span class="site-heading-lower">Mega Games</span>
       </h1>
 
   
         <div style="text-align: right; margin-right: 100px; color: white; margin-bottom: 10px;">
           {% if user.is_authenticated %}
-            ¡Hola, {{user.username}}! &nbsp; &nbsp;
+            ¡Bienvenido, {{user.username}}! &nbsp; &nbsp;
             <a class="btn btn-primary btn-sm" href="{% url 'cerrar_sesion' %}">Cerrar sesión</a>
 
 
@@ -42,17 +42,17 @@
  
  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
     <div class="container">
-      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="home.html">eCommerce 2022</a>
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="home.html">Mega Games</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item {% if request.path == '/' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Inicio</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Home' %}">Pagina de inicio</a>
           </li>
           <li class="nav-item {% if request.path == '/tienda/' %}active{% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'Shop' %}">Tienda</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'Shop' %}">Catalogo de juegos</a>
           </li>
         </ul>
       </div>
@@ -96,7 +96,7 @@
         	<a href="sample.html" class="link">Aviso legal</a> ·
         	<a href="sample.html" class="link">Cookies</a>
 		</p>
-        <p class="m-0 mbt1">&copy; eCommerce Lucas Migliaccio 2022</p>
+        <p class="m-0 mbt1">&copy; MegaGames 2010</p>
       </div>
 	</footer>
 </body>
